@@ -12,7 +12,7 @@ env:
 
 before_install:
     - brew update 1>/dev/null
-    - brew install doxygen nasm yasm optipng imagemagick coreutils intltool ninja antlr
+    - brew install doxygen nasm yasm optipng imagemagick coreutils intltool ninja antlr ccache
     - brew upgrade cmake
     - wget --no-check-certificate https://raw.githubusercontent.com/FFmpeg/gas-preprocessor/master/gas-preprocessor.pl
     - chmod +x gas-preprocessor.pl
@@ -22,8 +22,10 @@ before_install:
     - git submodule update --init --recursive
 
 install:
-    - ./prepare.py -d x86_64 -G Ninja
+    - ccache -s
+    - ./prepare.py -d x86_64 -G Ninja -DCMAKE_C_COMPILER_LAUNCHER=$(which ccache) -DCMAKE_CXX_COMPILER_LAUNCHER=$(which ccache)
     - make -j4 -s 1>/dev/null
+    - ccache -s
     - mkdir -p $KIF_SCREENSHOTS
 
 script:
