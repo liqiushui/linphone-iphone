@@ -1,9 +1,10 @@
 language: objective-c
 
 git:
-    depth: 1
-    submodule_depth: 1
+    #may be useful if new commits has been pushed in the mean time
     submodules: true
+    depth: 5
+    submodule_depth: 1
 
 cache:
     directories:
