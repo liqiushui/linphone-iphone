@@ -2,6 +2,7 @@ language: objective-c
 
 git:
     depth: 1
+    submodule_depth: 1
 
 cache:
     directories:
