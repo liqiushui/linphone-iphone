@@ -1,5 +1,7 @@
 language: objective-c
 
+git:
+    recursive: false
 cache: bundler
 script:
     - brew install doxygen nasm yasm optipng imagemagick coreutils intltool ninja antlr ccache
