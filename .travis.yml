@@ -1,5 +1,7 @@
 sudo: false
 
+language: objective-c
+
 cache:
     directories:
         - $HOME/.ccache
@@ -11,5 +13,5 @@ git:
 script:
     - brew install ccache
     - echo 'int main() { return 0; }' > main.c
-    - ccache gcc main.c -c test.o
+    - ccache gcc main.c -o test.o
     - ccache -s
