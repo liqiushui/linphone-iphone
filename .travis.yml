@@ -2,6 +2,6 @@ language: objective-c
 
 git:
     submodules: false
-cache: bundler
+cache: brew
 script:
     - brew install doxygen nasm yasm optipng imagemagick coreutils intltool ninja antlr ccache
