@@ -1,7 +1,12 @@
 language: objective-c
 
+cache:
+    directories:
+        - $HOME/.ccache
+        - /usr/local
+
 git:
     submodules: false
-cache: brew
+
 script:
     - brew install doxygen nasm yasm optipng imagemagick coreutils intltool ninja antlr ccache
