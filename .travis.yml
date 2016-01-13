@@ -11,5 +11,5 @@ git:
 script:
     - brew install ccache
     - echo 'int main() { return 0; }' > main.c
-    - ccache gcc main.c
+    - ccache gcc main.c -c test.o
     - ccache -s
