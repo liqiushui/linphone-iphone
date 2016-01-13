@@ -1,4 +1,5 @@
 language: objective-c
 
+cache: bundler
 script:
     - brew install doxygen nasm yasm optipng imagemagick coreutils intltool ninja antlr ccache
