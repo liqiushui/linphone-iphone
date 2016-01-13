@@ -9,4 +9,7 @@ git:
     submodules: false
 
 script:
-    - brew install doxygen nasm yasm optipng imagemagick coreutils intltool ninja antlr ccache
+    - brew install ccache
+    - echo 'int main() { return 0; }' > main.c
+    - ccache gcc main.c
+    - ccache -s
