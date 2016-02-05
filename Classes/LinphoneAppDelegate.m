@@ -101,6 +101,9 @@
 	}
 }
 
+#define __IPHONE_OS_VERSION_SOFT_MAX_REQUIRED_OLD __IPHONE_OS_VERSION_SOFT_MAX_REQUIRED
+#undef __IPHONE_OS_VERSION_SOFT_MAX_REQUIRED
+#define __IPHONE_OS_VERSION_SOFT_MAX_REQUIRED __IPHONE_8_0
 - (UIUserNotificationCategory *)getMessageNotificationCategory {
 	NSArray *actions;
 
@@ -168,6 +171,8 @@
 
 	return localRingNotifAction;
 }
+#undef __IPHONE_OS_VERSION_SOFT_MAX_REQUIRED
+#define __IPHONE_OS_VERSION_SOFT_MAX_REQUIRED __IPHONE_OS_VERSION_SOFT_MAX_REQUIRED_OLD
 
 - (void)registerForNotifications:(UIApplication *)app {
 	LinphoneManager *instance = [LinphoneManager instance];

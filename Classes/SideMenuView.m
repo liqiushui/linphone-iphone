@@ -14,14 +14,12 @@
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
-#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 70000
 	// it's better to detect only pan from screen edges
 	UIScreenEdgePanGestureRecognizer *pan =
 		[[UIScreenEdgePanGestureRecognizer alloc] initWithTarget:self action:@selector(onLateralSwipe:)];
 	pan.edges = UIRectEdgeRight;
 	[self.view addGestureRecognizer:pan];
 	_swipeGestureRecognizer.enabled = NO;
-#endif
 }
 - (void)viewWillAppear:(BOOL)animated {
 	[super viewWillAppear:animated];
@@ -65,9 +63,14 @@
 	_avatarImage.image = [LinphoneUtils selfAvatar];
 }
 
+#define __IPHONE_OS_VERSION_SOFT_MAX_REQUIRED_OLD __IPHONE_OS_VERSION_SOFT_MAX_REQUIRED
+#undef __IPHONE_OS_VERSION_SOFT_MAX_REQUIRED
+#define __IPHONE_OS_VERSION_SOFT_MAX_REQUIRED __IPHONE_7_0
 - (void)onLateralSwipe:(UIScreenEdgePanGestureRecognizer *)pan {
 	[PhoneMainView.instance.mainViewController hideSideMenu:YES];
 }
+#undef __IPHONE_OS_VERSION_SOFT_MAX_REQUIRED
+#define __IPHONE_OS_VERSION_SOFT_MAX_REQUIRED __IPHONE_OS_VERSION_SOFT_MAX_REQUIRED_OLD
 
 - (IBAction)onHeaderClick:(id)sender {
 	[PhoneMainView.instance changeCurrentView:SettingsView.compositeViewDescription];

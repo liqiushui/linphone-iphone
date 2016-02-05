@@ -2,10 +2,15 @@
 // Prefix header for all source files of the 'linphone' target in the 'linphone' project
 //
 
+#define __IPHONE_OS_VERSION_SOFT_MAX_REQUIRED __IPHONE_6_0
+#import "NBUAvailability.h"
+
 #ifdef __OBJC__
     #import <Foundation/Foundation.h>
     #import <UIKit/UIKit.h>
 #endif
+
+
 
 #import "Log.h"
 #import "Utils.h"

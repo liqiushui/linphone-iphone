@@ -543,6 +543,7 @@
 		63701DDF1BA32039006A9AE3 /* UIConfirmationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 63701DDE1BA32039006A9AE3 /* UIConfirmationDialog.m */; };
 		637157A11B283FE200C91677 /* FileTransferDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 637157A01B283FE200C91677 /* FileTransferDelegate.m */; };
 		6377AC801BDE4069007F7625 /* UIBackToCallButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377AC7F1BDE4069007F7625 /* UIBackToCallButton.m */; };
+		6379F9B31C64B71A00867723 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 6379F9B11C64B71A00867723 /* LICENSE */; };
 		6381DA7D1C1AD5EA00DF3BBD /* UIBouncingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6381DA7C1C1AD5EA00DF3BBD /* UIBouncingView.m */; };
 		638F1A621C2021B2004B8E02 /* DialerView~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 638F1A601C2021B2004B8E02 /* DialerView~ipad.xib */; };
 		638F1A881C2167C2004B8E02 /* CallView~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 638F1A861C2167C2004B8E02 /* CallView~ipad.xib */; };
@@ -628,7 +629,7 @@
 		63E27A5A1C51392A00D332AE /* libebml2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 63E27A4D1C50EAC300D332AE /* libebml2.a */; };
 		63E27A5B1C51392A00D332AE /* libmatroska2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 63E27A471C50EA7A00D332AE /* libmatroska2.a */; };
 		63E59A3F1ADE70D900646FB3 /* InAppProductsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 63E59A3E1ADE70D900646FB3 /* InAppProductsManager.m */; };
-		63E802DB1C625AEF000D5509 /* nowebcamCIF.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 63E802DA1C625AEF000D5509 /* nowebcamCIF.jpg */; };
+		63E802DB1C625AEF000D5509 /* (null) in Resources */ = {isa = PBXBuildFile; };
 		63EEE3FF1BBA9AC00087D3AF /* libcunit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F03A9B7E18C0D9C900C4D7FE /* libcunit.a */; };
 		63EEE4001BBA9AC00087D3AF /* liblinphonetester.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F0BB8C0F193623F200974404 /* liblinphonetester.a */; };
 		63EEE4041BBA9B010087D3AF /* libbellesip.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 223CA7E516D9255800EF1BEC /* libbellesip.a */; };
@@ -1436,6 +1437,8 @@
 		637157A01B283FE200C91677 /* FileTransferDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FileTransferDelegate.m; path = Utils/FileTransferDelegate.m; sourceTree = "<group>"; };
 		6377AC7E1BDE4068007F7625 /* UIBackToCallButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIBackToCallButton.h; sourceTree = "<group>"; };
 		6377AC7F1BDE4069007F7625 /* UIBackToCallButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIBackToCallButton.m; sourceTree = "<group>"; };
+		6379F9B11C64B71A00867723 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		6379F9B21C64B71A00867723 /* NBUAvailability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NBUAvailability.h; sourceTree = "<group>"; };
 		6381DA7B1C1AD5EA00DF3BBD /* UIBouncingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIBouncingView.h; sourceTree = "<group>"; };
 		6381DA7C1C1AD5EA00DF3BBD /* UIBouncingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIBouncingView.m; sourceTree = "<group>"; };
 		638F1A611C2021B2004B8E02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = "Base.lproj/DialerView~ipad.xib"; sourceTree = "<group>"; };
@@ -2279,7 +2282,6 @@
 				6316A07D1C5F64330073BFA4 /* add_field_over.png */,
 				6316A07E1C5F64330073BFA4 /* add_field_over@2x.png */,
 				6316A07F1C5F64330073BFA4 /* avatar.png */,
-				63E802DA1C625AEF000D5509 /* nowebcamCIF.jpg */,
 				6316A0801C5F64330073BFA4 /* avatar@2x.png */,
 				6316A0811C5F64330073BFA4 /* avatar~ipad.png */,
 				6316A0821C5F64330073BFA4 /* avatar~ipad@2x.png */,
@@ -2724,6 +2726,16 @@
 			path = Utils/HPGrowingTextView;
 			sourceTree = "<group>";
 		};
+		6379F9B01C64B71A00867723 /* NBUCore */ = {
+			isa = PBXGroup;
+			children = (
+				6379F9B11C64B71A00867723 /* LICENSE */,
+				6379F9B21C64B71A00867723 /* NBUAvailability.h */,
+			);
+			name = NBUCore;
+			path = Utils/NBUCore;
+			sourceTree = "<group>";
+		};
 		63AADBC31B6A0FF200AA16FD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -2799,6 +2811,7 @@
 				63B81A021B57DA33009604A6 /* TPKeyboardAvoiding */,
 				D3F7997E15BD31EC0018C273 /* TPMultiLayoutViewController */,
 				6308F9C31BF0DD6600D1234B /* XMLRPCHelper.h */,
+				6379F9B01C64B71A00867723 /* NBUCore */,
 				6308F9C41BF0DD6600D1234B /* XMLRPCHelper.m */,
 				C9B3A6FD15B485DB006F52EE /* Utils.h */,
 				D35860D515B549B500513429 /* Utils.m */,
@@ -3156,6 +3169,7 @@
 				6316A29F1C5F64350073BFA4 /* chat_attachment_over@2x.png in Resources */,
 				6316A3DB1C5F64350073BFA4 /* waiting_time.png in Resources */,
 				6316A29B1C5F64350073BFA4 /* chat_attachment_default@2x.png in Resources */,
+				6379F9B31C64B71A00867723 /* LICENSE in Resources */,
 				6316A3981C5F64350073BFA4 /* options_start_conference_disabled@2x.png in Resources */,
 				6316A26C1C5F64350073BFA4 /* call_start_body_disabled~ipad.png in Resources */,
 				6316A3531C5F64350073BFA4 /* numpad_5_default@2x.png in Resources */,
@@ -3167,7 +3181,7 @@
 				6316A2971C5F64350073BFA4 /* chat_add_default@2x.png in Resources */,
 				6316A2E41C5F64350073BFA4 /* dialer_back_default.png in Resources */,
 				6316A3871C5F64350073BFA4 /* numpad_star_over~ipad.png in Resources */,
-				63E802DB1C625AEF000D5509 /* nowebcamCIF.jpg in Resources */,
+				63E802DB1C625AEF000D5509 /* (null) in Resources */,
 				6316A2781C5F64350073BFA4 /* call_status_missed~ipad.png in Resources */,
 				6316A32E1C5F64350073BFA4 /* numpad_0_over~ipad.png in Resources */,
 				63AADBFF1B6A0FF200AA16FD /* assistant_external_sip.rc in Resources */,
