@@ -307,6 +307,12 @@ static int check_should_migrate_images(void *data, int argc, char **argv, char *
 	BOOL migrated = FALSE;
 	char *attach_stmt = NULL;
 	LinphoneProxyConfig *default_proxy = linphone_core_get_default_proxy_config(lc);
+    
+    
+//    LOGD(@"Can't ");
+//    LOGV(ORTP_DEBUG, @"Can't ");
+    [Log log:ORTP_DEBUG file:__FILE__ line:__LINE__ format:nil];
+
 
 	if (sqlite3_open([newDbPath UTF8String], &newDb) != SQLITE_OK) {
 		LOGE(@"Can't open \"%@\" sqlite3 database.", newDbPath);

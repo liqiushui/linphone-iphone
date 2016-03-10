@@ -40,6 +40,10 @@
 }
 
 + (void)log:(OrtpLogLevel)severity file:(const char *)file line:(int)line format:(NSString *)format, ... {
+    
+    if(!format)
+        return ;
+    
 	va_list args;
 	va_start(args, format);
 	NSString *str = [[NSString alloc] initWithFormat:format arguments:args];

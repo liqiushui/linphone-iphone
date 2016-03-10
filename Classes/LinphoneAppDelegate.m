@@ -47,13 +47,13 @@
 #pragma mark -
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
-	LOGI(@"%@", NSStringFromSelector(_cmd));
+//	LOGI(@"%@", NSStringFromSelector(_cmd));
 	[LinphoneManager.instance enterBackgroundMode];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
-	LOGI(@"%@", NSStringFromSelector(_cmd));
-	LinphoneCall *call = linphone_core_get_current_call(LC);
+//	LOGI(@"%@", NSStringFromSelector(_cmd));
+	LinphoneCall *call = linphone_core_get_current_call([LinphoneManager getLc]);
 
 	if (call) {
 		/* save call context */
@@ -72,7 +72,7 @@
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-	LOGI(@"%@", NSStringFromSelector(_cmd));
+//	LOGI(@"%@", NSStringFromSelector(_cmd));
 
 	if (startedInBackground) {
 		startedInBackground = FALSE;
@@ -83,7 +83,7 @@
 
 	[instance becomeActive];
 
-	LinphoneCall *call = linphone_core_get_current_call(LC);
+	LinphoneCall *call = linphone_core_get_current_call([LinphoneManager getLc]);
 
 	if (call) {
 		if (call == instance->currentCallContextBeforeGoingBackground.call) {
@@ -132,7 +132,7 @@
 		reply_inline.activationMode = UIUserNotificationActivationModeBackground;
 		reply_inline.destructive = NO;
 		reply_inline.authenticationRequired = NO;
-		reply_inline.behavior = UIUserNotificationActionBehaviorTextInput;
+//		reply_inline.behavior = UIUserNotificationActionContextDefault;
 
 		actions = @[ reply_inline ];
 	}
@@ -219,7 +219,7 @@
 		}
 	}
 	bgStartId = [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:^{
-	  LOGW(@"Background task for application launching expired.");
+//	  LOGW(@"Background task for application launching expired.");
 	  [[UIApplication sharedApplication] endBackgroundTask:bgStartId];
 	}];
 
@@ -232,7 +232,7 @@
 
 	NSDictionary *remoteNotif = [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
 	if (remoteNotif) {
-		LOGI(@"PushNotification from launch received.");
+//		LOGI(@"PushNotification from launch received.");
 		[self processRemoteNotification:remoteNotif];
 	}
 	if (bgStartId != UIBackgroundTaskInvalid)
@@ -465,18 +465,18 @@
 			  withResponseInfo:(NSDictionary *)responseInfo
 			 completionHandler:(void (^)())completionHandler {
 
-	if ([notification.category isEqualToString:@"incoming_msg"] && [identifier isEqualToString:@"reply_inline"]) {
-		LinphoneCore *lc = [LinphoneManager getLc];
-		NSString *replyText = [responseInfo objectForKey:UIUserNotificationActionResponseTypedTextKey];
-		NSString *from = [notification.userInfo objectForKey:@"from_addr"];
-		LinphoneChatRoom *room = linphone_core_get_chat_room_from_uri(lc, [from UTF8String]);
-		if (room) {
-			LinphoneChatMessage *msg = linphone_chat_room_create_message(room, replyText.UTF8String);
-			linphone_chat_room_send_chat_message(room, msg);
-			linphone_chat_room_mark_as_read(room);
-			[PhoneMainView.instance updateApplicationBadgeNumber];
-		}
-	}
+//	if ([notification.category isEqualToString:@"incoming_msg"] && [identifier isEqualToString:@"reply_inline"]) {
+//		LinphoneCore *lc = [LinphoneManager getLc];
+//		NSString *replyText = [responseInfo objectForKey:UIUserNotificationActionResponseTypedTextKey];
+//		NSString *from = [notification.userInfo objectForKey:@"from_addr"];
+//		LinphoneChatRoom *room = linphone_core_get_chat_room_from_uri(lc, [from UTF8String]);
+//		if (room) {
+//			LinphoneChatMessage *msg = linphone_chat_room_create_message(room, replyText.UTF8String);
+//			linphone_chat_room_send_chat_message(room, msg);
+//			linphone_chat_room_mark_as_read(room);
+//			[PhoneMainView.instance updateApplicationBadgeNumber];
+//		}
+//	}
 }
 
 - (void)application:(UIApplication *)application
